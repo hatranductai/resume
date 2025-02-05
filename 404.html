@@ -1,4 +1,5 @@
 <script>
-  var redirectTo = location.pathname + location.search
-  window.location.replace("/index.html?redirect=" + redirectTo)
+  var redirectTo = location.href.slice(location.origin.length)
+  sessionStorage.redirectTo = redirectTo
+  window.location.replace("/index.html")
 </script>
